@@ -1,7 +1,8 @@
 name: Deploy React App
-on: push:
-  branches:
-    - 'master'
+on:
+  push:
+    branches:
+      - "master"
 jobs:
   test_my_comp:
     runs-on: windows-latest
