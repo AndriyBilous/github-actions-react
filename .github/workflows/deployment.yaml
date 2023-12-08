@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - "master"
-    paths-ignore:
-      - ".github/workflows/*"
+    # paths-ignore:
+    #   - ".github/workflows/*"   --- git actions ignore all changes in this file
 jobs:
   test_my_comp:
     runs-on: windows-latest
