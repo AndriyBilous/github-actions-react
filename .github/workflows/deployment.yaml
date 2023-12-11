@@ -6,7 +6,7 @@ on:
     # paths-ignore:
     #   - ".github/workflows/*"   --- git actions ignore all changes in this file
 jobs:
-  test_my_comp:
+  build:
     runs-on: windows-latest
     steps:
       - name: Get repository code
@@ -36,7 +36,7 @@ jobs:
         run: npm run lint
   build:
     runs-on: windows-latest
-    needs: lint
+    needs: [lint, build]
     steps:
       - name: Get repository code
         uses: actions/checkout@v4
