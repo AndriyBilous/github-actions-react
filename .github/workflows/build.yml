@@ -1,4 +1,4 @@
-name: Build
+name: Build & deploy
 on: [push, workflow_dispatch]
 jobs:
   build:
@@ -15,3 +15,11 @@ jobs:
         with:
           name: build-files
           path: build # or path/to/artifact
+  deploy:
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - name: Get build project
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
